@@ -14,7 +14,7 @@ while True:
     except ValueError:
         continue
 
-bmi = (w / h ** 2) * 703
+bmi = (w / h ** 2) * 703 # idk if this is actually accurate but its whatever the formula they gave us soo
 print(f"Your BMI is {bmi:.2f}.")
 
 if bmi < 18.5 and bmi > 25:
