@@ -15,7 +15,7 @@ def idValidate(x):
     return f"{x} is not a valid ID."
 
 def zipValidate(x):
-    if x.isdigit(): # if zip is alll numerical return true (this is stupid isdigit works but not isnumerical)
+    if x.isdigit(): # if zip is alll numerical return true (this is stupid isdigit works but not isnumerical) (maybe?)
         return True
     return "The ZIP code must be numeric."
     
