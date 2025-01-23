@@ -7,16 +7,29 @@ people = [
     {"firstname": "Sally", "lastname": "Weber", "position": "Web Developer", "sepdate": "2015-12-18"}
 ]
 
+search = input("Enter a search string: ")
+
 def get_lastname(entry):
     return entry["lastname"]
 
-people_sort = sorted(people, key = get_lastname)
+people_sort = sorted(people, key = get_lastname) # didnt specifically say to do this but it was shown in the example
 
+for entry in people_sort:
+    if search in entry['firstname'] or search in entry['lastname']:
+        print(f"{search} found in {entry['firstname'] or entry['lastname']}")
+        entry['found'] = 1
+
+
+print("Results: ")
 print("Name                 | Position             | Separation Date")
 print("---------------------|----------------------|----------------")
 
 for entry in people_sort:
-    fullname = f"{entry['firstname']} {entry['lastname']}"
-    position = entry['position']
-    sepdate = entry['sepdate']
-    print(f"{fullname:<20} | {position:<20} | {sepdate:<20}")
+    try:
+        if entry['found'] == 1:
+            fullname = f"{entry['firstname']} {entry['lastname']}"
+            position = entry['position']
+            sepdate = entry['sepdate']
+            print(f"{fullname:<20} | {position:<20} | {sepdate:<20}")
+    except KeyError:
+        continue # ooooooo error handling (theres probably a nicer way to do this)
