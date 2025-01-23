@@ -19,4 +19,4 @@ for entry in people_sort:
     fullname = f"{entry['firstname']} {entry['lastname']}"
     position = entry['position']
     sepdate = entry['sepdate']
-    print(f"{fullname:<20} | {position:<20} | {sepdate:<15}")
+    print(f"{fullname:<20} | {position:<20} | {sepdate:<20}")
